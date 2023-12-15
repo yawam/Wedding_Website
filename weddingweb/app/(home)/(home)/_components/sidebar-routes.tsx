@@ -16,13 +16,13 @@ export const SidebarRoutes = () => {
       href: "/gallery",
     },
     {
-      label: "Gifts and Donations",
-      href: "/donations",
+      label: "Registry",
+      href: "/registry",
     },
   ];
 
   return (
-    <div className="flex flex-col space-y-6 mt text-white">
+    <div className="flex flex-col w-full space-y-6 mt text-white">
       {routes.map((route) => (
         <>
           <NavbarItems key={route.href} label={route.label} href={route.href} />

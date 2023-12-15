@@ -15,8 +15,8 @@ export const NavbarRoutes = () => {
       href: "/gallery",
     },
     {
-      label: "Gifts and Donations",
-      href: "/donations",
+      label: "Registry",
+      href: "/registry",
     },
   ];
 
