@@ -31,7 +31,7 @@ import { useState } from "react";
 import AddressForm from "./address-form";
 
 interface ComingFormProps {
-  initialData: User & { address: Address };
+  initialData: { address?: Address | null | undefined } & User;
 }
 // Define the Zod schema for the form
 const FormSchema = z.object({
@@ -54,7 +54,6 @@ export function ComingForm({ initialData }: ComingFormProps) {
   async function onSubmit(data: z.infer<typeof FormSchema>) {
     try {
       const attendanceValue = data.attendance;
-      console.log(attendanceValue);
 
       const response = await fetch("/api/attendance", {
         method: "PATCH",

@@ -1,8 +1,18 @@
 import { Separator } from "@/components/ui/separator";
 import { NavbarItems } from "./navbar-items";
+import { currentUser } from "@clerk/nextjs";
+import { db } from "@/lib/db";
 
-export const SidebarRoutes = () => {
-  const routes = [
+export const SidebarRoutes = async () => {
+  const user = await currentUser();
+  const email = user?.emailAddresses[0].emailAddress;
+
+  const adminData = await db.user.findUnique({
+    where: {
+      email: email,
+    },
+  });
+  let routes = [
     {
       label: "Home",
       href: "/",
@@ -20,6 +30,16 @@ export const SidebarRoutes = () => {
       href: "/registry",
     },
   ];
+
+  if (adminData?.isAdmin) {
+    routes = [
+      ...routes,
+      {
+        label: "Admin Dashboard",
+        href: "/admin",
+      },
+    ];
+  }
 
   return (
     <div className="flex flex-col w-full space-y-6 mt text-white">

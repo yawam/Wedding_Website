@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
 
 interface AddressFormProps {
-  initialData: User & { address: Address };
+  initialData: { address?: Address | null | undefined } & User;
 }
 
 const FormSchema = z.object({
@@ -30,7 +30,6 @@ const FormSchema = z.object({
 });
 
 const AddressForm = ({ initialData }: AddressFormProps) => {
-  console.log(initialData?.address?.street_address);
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -45,7 +44,6 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
     try {
       const addressValue = data;
-      console.log(addressValue);
 
       const response = await fetch("/api/address", {
         method: "PATCH",
@@ -56,7 +54,6 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
       });
       router.refresh();
       if (response.ok) {
-        console.log("This is Working");
         toast({
           title: "Address Status Updated",
           description: "Address Added",
