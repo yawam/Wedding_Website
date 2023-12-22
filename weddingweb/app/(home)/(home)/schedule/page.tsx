@@ -20,7 +20,7 @@ export default async function SchedulePage() {
   };
 
   return (
-    <div className="flex flex-row justify-around items-end h-full bg-[url('/pic.jpg')]">
+    <div className="flex flex-col md:flex-row p-6 justify-around items-end h-full bg-[url('/pic.jpg')]">
       <Link
         href="https://www.google.com/maps/place/Jordan+River+Utah+Temple/@40.5663844,-111.9338162,17z/data=!3m1!4b1!4m6!3m5!1s0x87528618b2bb7743:0xdf106a6f3945ed53!8m2!3d40.5663804!4d-111.9312413!16zL20vMGIxemM1?entry=ttu"
         target="_blank"

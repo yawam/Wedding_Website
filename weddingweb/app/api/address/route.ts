@@ -16,7 +16,6 @@ export async function PATCH(req: Request) {
 
   const response = await req.json();
   try {
-    console.log(response);
     await db.address.upsert({
       where: {
         userId: userinfo?.id,

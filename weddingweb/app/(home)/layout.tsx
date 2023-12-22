@@ -1,6 +1,7 @@
 import { UserButton } from "@clerk/nextjs";
 import { Navbar } from "./(home)/_components/navbar";
 import { MobileSidebar } from "./(home)/_components/mobile-sidebar";
+import Link from "next/link";
 
 export default function HomePageLayout({
   children,

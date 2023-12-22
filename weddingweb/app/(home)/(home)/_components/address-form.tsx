@@ -55,8 +55,8 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
       router.refresh();
       if (response.ok) {
         toast({
-          title: "Address Status Updated",
-          description: "Address Added",
+          title: "Address Updated",
+          description: "Be sure to check out our registry!",
         });
       } else {
         throw new Error("Submission failed");
@@ -73,6 +73,9 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormDescription className=" text-red-500">
+          Note: Fill this form only if you need a physical invite
+        </FormDescription>
         <FormField
           control={form.control}
           name="streetAddress"

@@ -66,7 +66,8 @@ export function ComingForm({ initialData }: ComingFormProps) {
       if (response.ok) {
         toast({
           title: "Attendance Status Updated",
-          description: "Thank you for your response",
+          description:
+            "Thank you for your response. Be sure to check out or registry!",
         });
       } else {
         throw new Error("Submission failed");
