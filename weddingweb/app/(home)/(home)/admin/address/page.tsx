@@ -16,9 +16,8 @@ const FeedbackPage = async () => {
     },
   });
 
-  const feedback = await db.feedback.findMany({
-    select: {
-      description: true,
+  const address = await db.address.findMany({
+    include: {
       user: { select: { firstname: true, lastname: true } },
     },
   });
@@ -32,8 +31,8 @@ const FeedbackPage = async () => {
   return (
     <div className="bg-blur p-8 rounded-lg">
       <h2 className="text-2xl mb-4">Checkout who&apos;s giving you feedback</h2>
-      {feedback.length === 0 ? (
-        <p>No Feedback Yet</p>
+      {address.length === 0 ? (
+        <p>No one needs a physical invite yet</p>
       ) : (
         <table className="w-full bg-white bg-opacity-10 rounded-md overflow-hidden">
           <thead className="text-amber-400">
@@ -44,13 +43,13 @@ const FeedbackPage = async () => {
             </tr>
           </thead>
           <tbody>
-            {feedback.map((feed, key) => (
+            {address.map((info, key) => (
               <tr key={key} className="bg-white bg-opacity-5">
                 <td className="py-2 px-4 border-b m-auto">
-                  {feed.description}
+                  {info.street_address} {info.city} {info.state} {info.zipcode}
                 </td>
                 <td className="py-2 px-4 border-b m-auto">
-                  {feed.user?.firstname} {feed.user?.lastname}
+                  {user.firstName} {user.lastName}
                 </td>
                 {/* Add other table cells as needed */}
               </tr>

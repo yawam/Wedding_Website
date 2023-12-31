@@ -5,9 +5,11 @@ import AttendanceCard from "./_components/attendance-card";
 import VisitorsCard from "./_components/visitors-card";
 import FeedbackCard from "./_components/feedback-card";
 import AddressCard from "./_components/address-card";
+import { auth } from "@clerk/nextjs";
 
 const AdminLayout = async ({ children }: { children: React.ReactNode }) => {
   const user = await currentUser();
+  const { userId } = auth();
   const email = user?.emailAddresses[0].emailAddress;
 
   if (!email) {

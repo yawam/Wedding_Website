@@ -35,7 +35,7 @@ export const NavbarRoutes = async () => {
       ...routes,
       {
         label: "Admin Dashboard",
-        href: "/admin",
+        href: "/admin/attendance",
       },
     ];
   }

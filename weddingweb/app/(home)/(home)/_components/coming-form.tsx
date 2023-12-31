@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/dialog";
 import { useState } from "react";
 import AddressForm from "./address-form";
+import ComingWithForm from "./coming-with";
 
 interface ComingFormProps {
   initialData: { address?: Address | null | undefined } & User;
@@ -126,7 +127,8 @@ export function ComingForm({ initialData }: ComingFormProps) {
               </Button>
             ))}
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className="my-4 overflow-y-scroll">
+          <ComingWithForm initialData={initialData} />
           <AddressForm initialData={initialData} />
           <DialogClose asChild>
             <Button type="button" variant="secondary">

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
@@ -62,7 +64,6 @@ export async function POST(req: Request, {}) {
   if (!attributes) {
     return new NextResponse("[atttributes not existing]");
   }
-
   const email = attributes.email_addresses[0]?.email_address;
   console.log(email);
 

@@ -22,8 +22,6 @@ const AttendancePage = async () => {
     },
   });
 
-  console.log(attendees);
-
   if (!adminData?.isAdmin) {
     return new NextResponse("This page is only accessible to admins", {
       status: 401,
@@ -38,6 +36,7 @@ const AttendancePage = async () => {
         <thead className="text-amber-400">
           <tr>
             <th className="py-2 px-4 border-b">Name</th>
+            <th className="py-2 px-4 border-b">No. coming with</th>
             {/* Add other table headers as needed */}
           </tr>
         </thead>
@@ -47,6 +46,7 @@ const AttendancePage = async () => {
               <td className="py-2 px-4 border-b">
                 {attendee.firstname} {attendee.lastname}
               </td>
+              <td className="py-2 px-4 border-b">{attendee.comingwith}</td>
               {/* Add other table cells as needed */}
             </tr>
           ))}

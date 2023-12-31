@@ -16,6 +16,7 @@ model User {
   firstname    String
   lastname     String
   email        String  @unique
+  comingwith   Int?
   isAttending  Boolean? @default(false)
   isAdmin      Boolean? @default(false)
   address      Address? 

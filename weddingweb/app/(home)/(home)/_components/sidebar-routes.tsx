@@ -36,7 +36,7 @@ export const SidebarRoutes = async () => {
       ...routes,
       {
         label: "Admin Dashboard",
-        href: "/admin",
+        href: "/admin/attendance",
       },
     ];
   }

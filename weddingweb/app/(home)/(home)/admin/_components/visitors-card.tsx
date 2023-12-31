@@ -10,10 +10,17 @@ import Link from "next/link";
 
 const VisitorsCard = async () => {
   const visitors = await db.user.count();
+  const glassBackground = {
+    background: "rgba(255, 255, 255, 0.1)", // Adjust alpha for transparency
+    backdropFilter: "blur(15px)",
+  };
 
   return (
     <Link href="/admin/visitors">
-      <Card>
+      <Card
+        className="transition duration-150 ease-in-out hover:scale-105 shadow-xl"
+        style={glassBackground}
+      >
         <CardHeader>
           <CardTitle>Visits</CardTitle>
         </CardHeader>

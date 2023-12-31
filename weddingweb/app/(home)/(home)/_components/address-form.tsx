@@ -17,6 +17,7 @@ import { Address, User } from "@prisma/client";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/components/ui/use-toast";
+import ComingWithForm from "./coming-with";
 
 interface AddressFormProps {
   initialData: { address?: Address | null | undefined } & User;
@@ -39,6 +40,7 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
       zipCode: initialData?.address?.zipcode || "",
     },
   });
+
   const { toast } = useToast();
   const router = useRouter();
   const onSubmit = async (data: z.infer<typeof FormSchema>) => {
@@ -70,11 +72,13 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
       });
     }
   };
+
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
         <FormDescription className=" text-red-500">
-          Note: Fill this form only if you need a physical invite
+          Note: Fill the address form only if you <strong>need</strong> a
+          physical invite
         </FormDescription>
         <FormField
           control={form.control}
@@ -137,7 +141,9 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
 
         {/* Submit Button */}
         <Button className="sm: w-full" type="submit">
-          Submit
+          {!initialData.address
+            ? "Add Address Details"
+            : " Update Address Details"}
         </Button>
       </form>
     </Form>
