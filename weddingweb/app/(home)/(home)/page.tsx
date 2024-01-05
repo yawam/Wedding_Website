@@ -24,12 +24,12 @@ export default async function Home() {
     },
   });
 
-  const secondUserInfo = await db.address.findUnique({
-    where: {
-      userId: userInfo?.id,
-    },
-    include: { user: true },
-  });
+  // const secondUserInfo = await db.address.findUnique({
+  //   where: {
+  //     userId: userInfo?.id,
+  //   },
+  //   include: { user: true },
+  // });
 
   if (userInfo) {
     return (
