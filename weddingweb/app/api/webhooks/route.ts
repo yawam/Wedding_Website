@@ -5,19 +5,7 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-type AttributesType = {
-  // other properties...
-  email_addresses: { email_address: string }[];
-  first_name: { first_name: string };
-  last_name: { last_name: string };
-
-  // other properties...
-};
-
-export async function POST(
-  req: Request,
-  { attributes }: { attributes: AttributesType }
-) {
+export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "";
 
@@ -64,7 +52,7 @@ export async function POST(
   }
 
   // Get the ID and type
-  const { id, ...dataAttributes } = evt.data;
+  const { id, ...attributes } = evt.data;
   const eventType = evt.type;
 
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
@@ -76,6 +64,7 @@ export async function POST(
   }
   const email = attributes.email_addresses[0]?.email_address;
   console.log(email);
+  console.log("this is logging");
 
   try {
     await db.user.upsert({
@@ -85,15 +74,15 @@ export async function POST(
       create: {
         clerkId: id as string,
 
-        firstname: attributes.first_name.first_name,
+        firstname: attributes.first_name,
 
-        lastname: attributes.last_name.last_name,
+        lastname: attributes.last_name,
         email: email,
       },
       update: {
-        firstname: attributes.first_name.first_name,
+        firstname: attributes.first_name,
 
-        lastname: attributes.last_name.last_name,
+        lastname: attributes.last_name,
         email: email,
       },
     });

@@ -45,7 +45,7 @@ export function ComingForm({ initialData }: ComingFormProps) {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      attendance: initialData.isAttending || false,
+      attendance: initialData?.isAttending || false,
     },
   });
 
