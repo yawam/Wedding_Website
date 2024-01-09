@@ -32,7 +32,7 @@ import AddressForm from "./address-form";
 import ComingWithForm from "./coming-with";
 
 interface ComingFormProps {
-  initialData: { address?: Address | null | undefined } & User;
+  initialData: { address: Address | null | undefined } & User;
 }
 // Define the Zod schema for the form
 const FormSchema = z.object({

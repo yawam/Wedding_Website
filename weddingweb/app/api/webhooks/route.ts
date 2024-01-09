@@ -5,7 +5,19 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request, {}) {
+type AttributesType = {
+  // other properties...
+  email_addresses: { email_address: string }[];
+  first_name: { first_name: string };
+  last_name: { last_name: string };
+
+  // other properties...
+};
+
+export async function POST(
+  req: Request,
+  { attributes }: { attributes: AttributesType }
+) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "";
 
@@ -52,7 +64,7 @@ export async function POST(req: Request, {}) {
   }
 
   // Get the ID and type
-  const { id, ...attributes } = evt.data;
+  const { id, ...dataAttributes } = evt.data;
   const eventType = evt.type;
 
   console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
@@ -62,7 +74,6 @@ export async function POST(req: Request, {}) {
   if (!attributes) {
     return new NextResponse("[atttributes not existing]");
   }
-  // @ts-ignore
   const email = attributes.email_addresses[0]?.email_address;
   console.log(email);
 
@@ -72,29 +83,25 @@ export async function POST(req: Request, {}) {
         email: email,
       },
       create: {
-        // @ts-ignore
+        clerkId: id as string,
 
-        clerkId: id,
-        // @ts-ignore
+        firstname: attributes.first_name.first_name,
 
-        firstname: attributes.first_name,
-        // @ts-ignore
-
-        lastname: attributes.last_name,
+        lastname: attributes.last_name.last_name,
         email: email,
       },
       update: {
-        // @ts-ignore
+        firstname: attributes.first_name.first_name,
 
-        firstname: attributes.first_name,
-        // @ts-ignore
-
-        lastname: attributes.last_name,
+        lastname: attributes.last_name.last_name,
         email: email,
       },
     });
+    console.log("User created or updated successfully");
   } catch (error) {
     console.error("Error in creating user: ", error);
-    return new NextResponse(email, { status: 200 });
+    return new NextResponse(email, { status: 500 });
   }
+
+  return new NextResponse(payload);
 }
