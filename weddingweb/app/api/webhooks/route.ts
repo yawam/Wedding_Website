@@ -51,46 +51,49 @@ export async function POST(req: Request) {
     });
   }
 
-  // Get the ID and type
-  const { id, ...attributes } = evt.data;
-  const eventType = evt.type;
+  const bodyObject = JSON.parse(body);
 
-  console.log(`Webhook with and ID of ${id} and type of ${eventType}`);
-  console.log("Webhook body:", attributes);
+  // Get the ID and type
+  // const { ...data } = evt.data;
+  // const eventType = evt.type;
+
+  const data = bodyObject.data;
+  const eventType = bodyObject.type;
+
+  console.log(`Webhook with and ID of ${data.id} and type of ${eventType}`);
+  console.log("Webhook body:", data);
 
   //webhook is working and we need to extract information run prisma db on
-  if (!attributes) {
-    return new NextResponse("[atttributes not existing]");
+  if (data) {
+    const email = data.email_addresses?.[0]?.email_address;
+    console.log(email);
+    console.log("this is logging");
+
+    try {
+      await db.user.upsert({
+        where: {
+          email: email,
+        },
+        create: {
+          clerkId: data.id as string,
+
+          firstname: data.first_name,
+
+          lastname: data.last_name,
+          email: email,
+        },
+        update: {
+          firstname: data.first_name,
+
+          lastname: data.last_name,
+          email: email,
+        },
+      });
+      console.log("User created or updated successfully");
+    } catch (error) {
+      console.error("Error in creating user: ", error);
+      return new NextResponse(email, { status: 500 });
+    }
   }
-  const email = attributes.email_addresses[0]?.email_address;
-  console.log(email);
-  console.log("this is logging");
-
-  try {
-    await db.user.upsert({
-      where: {
-        email: email,
-      },
-      create: {
-        clerkId: id as string,
-
-        firstname: attributes.first_name,
-
-        lastname: attributes.last_name,
-        email: email,
-      },
-      update: {
-        firstname: attributes.first_name,
-
-        lastname: attributes.last_name,
-        email: email,
-      },
-    });
-    console.log("User created or updated successfully");
-  } catch (error) {
-    console.error("Error in creating user: ", error);
-    return new NextResponse(email, { status: 500 });
-  }
-
   return new NextResponse(payload);
 }
