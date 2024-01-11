@@ -14,7 +14,10 @@ export const MobileSidebar = () => {
       <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition">
         <Menu />
       </SheetTrigger>
-      <SheetContent side="left" className="p-2 bg-orange-800 flex flex-col ">
+      <SheetContent
+        side="left"
+        className="p-2 bg-orange-800 flex flex-col h-[22em]"
+      >
         <SheetClose>
           <SidebarRoutes />
         </SheetClose>

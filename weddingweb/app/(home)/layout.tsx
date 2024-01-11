@@ -10,7 +10,7 @@ export default function HomePageLayout({
 }) {
   return (
     <div className="h-full">
-      <div className="w-full h-[130px] fixed inset-y-0 z-50 px-4 pb-2 bg-orange-900">
+      <div className="w-full h-[140px] fixed inset-y-0 z-50 px-4 pb-2 bg-orange-900">
         <div className="flex justify-center items-center">
           <h1 className=" my-6 text-3xl font-bold text-white">
             Freda & Papa Yaw

@@ -20,13 +20,12 @@ export default async function SchedulePage() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row p-6 justify-around items-end h-full bg-[url('/pic.jpg')]">
+    <div className="relative flex flex-col md:flex-row p-6 justify-around items-end h-full bg-[url('/resize/rsz_1home.jpg')] bg-cover bg-center md:bg-none md:bg-amber-50">
       <Link
         href="https://www.google.com/maps/place/Jordan+River+Utah+Temple/@40.5663844,-111.9338162,17z/data=!3m1!4b1!4m6!3m5!1s0x87528618b2bb7743:0xdf106a6f3945ed53!8m2!3d40.5663804!4d-111.9312413!16zL20vMGIxemM1?entry=ttu"
         target="_blank"
         rel="noopener noreferrer"
-        className=" m-auto w-[475px] h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center text-amber-400 transition duration-150 ease-in-out hover:scale-105"
-        style={glassBackground}
+        className=" relative m-auto w-[375px] h-[225px] md:w-[475px] md:h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center bg-black bg-opacity-50 text-white transition duration-150 ease-in-out hover:scale-105"
       >
         <h1 className="text-2xl">Wedding</h1>
         <h2 className={`text-xl ${robotoSerif.className}`}>
@@ -35,13 +34,15 @@ export default async function SchedulePage() {
         <p>S Temple Dr, South Jordan, UT</p>
         <p>Saturday April 20th, 2023</p>
         <p>12:00PM</p>
+        <p className="absolute bottom-2 right-2 italic underline">
+          Click card for directions
+        </p>
       </Link>
       <Link
         href="https://www.google.com/maps/place/Jordan+River+Utah+Temple/@40.5663844,-111.9338162,17z/data=!3m1!4b1!4m6!3m5!1s0x87528618b2bb7743:0xdf106a6f3945ed53!8m2!3d40.5663804!4d-111.9312413!16zL20vMGIxemM1?entry=ttu"
         target="_blank"
         rel="noopener noreferrer"
-        className=" m-auto w-[475px] h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center text-amber-400 transition duration-150 ease-in-out hover:scale-105"
-        style={glassBackground}
+        className=" relative  m-auto w-[375px] h-[225px] md:w-[475px] md:h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center bg-black bg-opacity-50 text-white transition duration-150 ease-in-out hover:scale-105"
       >
         <h1 className="text-2xl">Reception</h1>
         <h2 className={`text-xl ${robotoSerif.className}`}>
@@ -50,6 +51,9 @@ export default async function SchedulePage() {
         <p>S Temple Dr, South Jordan, UT</p>
         <p>Saturday April 20th, 2023</p>
         <p>12:00PM</p>
+        <p className="absolute bottom-2 right-2 italic underline">
+          Click card for directions
+        </p>
       </Link>
     </div>
   );
