@@ -23,7 +23,7 @@ const AddressCard = async () => {
         style={glassBackground}
       >
         <CardHeader>
-          <CardTitle>Physical Invites Needed</CardTitle>
+          <CardTitle>Physical Invites</CardTitle>
         </CardHeader>
         <CardContent className="text-[100px] flex justify-center items-center p-2">
           {addressNeeded}

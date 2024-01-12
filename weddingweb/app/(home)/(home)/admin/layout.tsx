@@ -29,7 +29,7 @@ const AdminLayout = async ({ children }: { children: React.ReactNode }) => {
   }
   return (
     <>
-      <div className="mx-10 grid grid-cols-4 gap-4">
+      <div className="mx-10 grid grid-cols-2 gap-4 md:grid-cols-4">
         <AttendanceCard />
         <VisitorsCard />
         <FeedbackCard />

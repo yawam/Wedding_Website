@@ -16,7 +16,7 @@ export default function HomePageLayout({
       <div className="w-full h-[120px] fixed inset-y-0 z-50 px-4 pb-2 bg-orange-900">
         <div className="flex flex-col items-center justify-center max-w-[50%] mx-auto">
           <h1
-            className={`my-2 text-xl font-bold text-white ${playfairDisplay.className}`}
+            className={`my-2 text-xl font-bold text-white italic ${playfairDisplay.className}`}
           >
             Freda & Papa Yaw
           </h1>

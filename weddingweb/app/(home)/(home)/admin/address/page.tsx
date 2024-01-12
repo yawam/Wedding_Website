@@ -30,7 +30,9 @@ const FeedbackPage = async () => {
 
   return (
     <div className="bg-blur p-8 rounded-lg">
-      <h2 className="text-2xl mb-4">Checkout who&apos;s giving you feedback</h2>
+      <h2 className="text-2xl mb-4">
+        Checkout who need&apos;s a physical address
+      </h2>
       {address.length === 0 ? (
         <p>No one needs a physical invite yet</p>
       ) : (
@@ -49,7 +51,7 @@ const FeedbackPage = async () => {
                   {info.street_address} {info.city} {info.state} {info.zipcode}
                 </td>
                 <td className="py-2 px-4 border-b m-auto">
-                  {user.firstName} {user.lastName}
+                  {info.user?.firstname} {info.user?.lastname}
                 </td>
                 {/* Add other table cells as needed */}
               </tr>
