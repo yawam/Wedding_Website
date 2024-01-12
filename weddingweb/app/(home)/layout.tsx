@@ -2,6 +2,9 @@ import { UserButton } from "@clerk/nextjs";
 import { Navbar } from "./(home)/_components/navbar";
 import { MobileSidebar } from "./(home)/_components/mobile-sidebar";
 import Link from "next/link";
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({ subsets: ["latin"] });
 
 export default function HomePageLayout({
   children,
@@ -10,11 +13,14 @@ export default function HomePageLayout({
 }) {
   return (
     <div className="h-full">
-      <div className="w-full h-[140px] fixed inset-y-0 z-50 px-4 pb-2 bg-orange-900">
-        <div className="flex justify-center items-center">
-          <h1 className=" my-6 text-3xl font-bold text-white">
+      <div className="w-full h-[120px] fixed inset-y-0 z-50 px-4 pb-2 bg-orange-900">
+        <div className="flex flex-col items-center justify-center max-w-[50%] mx-auto">
+          <h1
+            className={`my-2 text-xl font-bold text-white ${playfairDisplay.className}`}
+          >
             Freda & Papa Yaw
           </h1>
+          <p className="text-lg font-bold text-white">April 20th 2023</p>
         </div>
         <div className="flex item w-full ">
           <div>
@@ -28,7 +34,7 @@ export default function HomePageLayout({
           </div>
         </div>
       </div>
-      <main className="h-full pt-[140px]">{children}</main>
+      <main className="h-full pt-[120px]">{children}</main>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import { UserButton, auth, currentUser } from "@clerk/nextjs";
 import { ComingForm } from "./_components/coming-form";
 import { Roboto_Serif } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 import Link from "next/link";
@@ -48,8 +49,8 @@ export default async function Home() {
 
   return (
     <>
-      <div className=" relative h-full w-full flex flex-col p-4 m-auto overflow-y-auto text-white md:text-black bg-amber-50">
-        <Image
+      <div className=" relative h-full w-full flex flex-col p-4 m-auto overflow-y-auto bg-[url('/resize/rsz_1ring.jpg')] bg-cover text-white md:text-black md:bg-none md:bg-amber-50">
+        {/* <Image
           className="absolute aspect-square rounded-lg z-10 shadow-2xl h-[180px] w-[180px] top-[50px] right-[50px] rotate-[25deg] md:h-[250px] md:w-[250px] md:top-[50px] md:right-[70px] md:rotate-[25deg]"
           src={"/resize/rsz_1sign-in-page.jpg"}
           width={300}
@@ -90,7 +91,7 @@ export default async function Home() {
           width={300}
           height={300}
           alt="holding image"
-        />
+        /> */}
         <div className="flex flex-col p-4 justify-center items-center z-40 bg-black rounded-lg bg-opacity-25 md:bg-transparent md:rounded-none md:bg-opacity-100">
           <h2 className="text-2xl text-bold font-serif my-2">
             Welcome {user?.firstName}!{" "}
