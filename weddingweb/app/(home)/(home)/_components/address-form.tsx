@@ -58,7 +58,8 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
       if (response.ok) {
         toast({
           title: "Address Updated",
-          description: "Be sure to check out our registry!",
+          description:
+            "Admins will confirm your order and you should receive a physical invite in about a week or two. Please be sure to check out registry",
         });
       } else {
         throw new Error("Submission failed");

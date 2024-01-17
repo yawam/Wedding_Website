@@ -47,8 +47,9 @@ const ComingWithForm = ({ initialData }: ComingWithFormProps) => {
 
       if (response.ok) {
         toast({
-          title: "Coming With Form Submitted",
-          description: `Number of people: ${numberOfPeople}`,
+          title: "Response submitted",
+          description:
+            "Please remember this is primarily for kids(excluding toddlers). Everyone else has to log in and declare attendance status individually. Check out out registry",
         });
       }
     } catch (error) {
