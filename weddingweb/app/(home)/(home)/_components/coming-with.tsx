@@ -49,7 +49,7 @@ const ComingWithForm = ({ initialData }: ComingWithFormProps) => {
         toast({
           title: "Response submitted",
           description:
-            "Please remember this is primarily for kids(excluding toddlers). Everyone else has to log in and declare attendance status individually. Check out out registry",
+            "Please remember this is primarily for kids(excluding toddlers). Everyone else has to log in and declare attendance status individually. Check out our registry",
         });
       }
     } catch (error) {
