@@ -105,10 +105,8 @@ export default async function Home() {
             We&apos;re getting married
           </h1>
         </div>
-        <div className="flex flex-col p2 justify-center items-center my-6 z-40 bg-black rounded-lg bg-opacity-25 md:bg-transparent md:rounded-none md:bg-opacity-100 ">
-          <h2 className="text-2xl text-bold font-serif my-2">
-            Are you Coming?
-          </h2>
+        <div className="flex flex-col p-4 justify-center items-center my-6 z-40 bg-black rounded-lg bg-opacity-25 md:bg-transparent md:rounded-none md:bg-opacity-100 ">
+          <h2 className="text-2xl text-bold font-serif">Are you Coming?</h2>
           <p className=" tracking-widest">Tell us!</p>
           <ComingForm
             //@ts-ignore

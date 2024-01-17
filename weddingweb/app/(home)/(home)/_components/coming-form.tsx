@@ -118,11 +118,11 @@ export function ComingForm({ initialData }: ComingFormProps) {
         <DialogTrigger asChild className=" cursor-pointer">
           {initialData?.isAttending &&
             (!initialData?.address ? (
-              <Button className="my-4" variant="ghost">
+              <Button className="mt-2" variant="ghost">
                 Add Address info
               </Button>
             ) : (
-              <Button className="my-4" variant="ghost">
+              <Button className="mt-2" variant="ghost">
                 Update Address Info
               </Button>
             ))}

@@ -16,7 +16,7 @@ export const MobileSidebar = () => {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="p-2 bg-orange-800 flex flex-col h-[22em]"
+        className="p-2 bg-orange-800 flex flex-col h-auto"
       >
         <SheetClose>
           <SidebarRoutes />
