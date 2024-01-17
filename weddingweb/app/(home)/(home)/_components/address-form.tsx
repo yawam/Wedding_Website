@@ -76,9 +76,12 @@ const AddressForm = ({ initialData }: AddressFormProps) => {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-        <FormDescription className=" text-red-500">
-          Note: Fill the address form only if you <strong>need</strong> a
-          physical invite
+        <FormDescription className=" text-red-500 text-xl">
+          Note:
+          <strong>
+            {" "}
+            Fill the address form ONLY if you need a physical invite
+          </strong>
         </FormDescription>
         <FormField
           control={form.control}

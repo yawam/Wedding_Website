@@ -122,7 +122,7 @@ export function ComingForm({ initialData }: ComingFormProps) {
                 Add Address info
               </Button>
             ) : (
-              <Button className="mt-2" variant="ghost">
+              <Button className="mt-4" variant="ghost">
                 Update Address Info
               </Button>
             ))}

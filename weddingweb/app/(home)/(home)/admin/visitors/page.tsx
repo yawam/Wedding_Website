@@ -18,8 +18,6 @@ const VisitorsPage = async () => {
 
   const visitors = await db.user.findMany();
 
-  console.log(visitors);
-
   if (!adminData?.isAdmin) {
     return new NextResponse("This page is only accessible to admins", {
       status: 401,

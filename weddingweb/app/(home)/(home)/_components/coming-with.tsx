@@ -64,7 +64,8 @@ const ComingWithForm = ({ initialData }: ComingWithFormProps) => {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
         <FormDescription>
-          How many people are you coming with? (Kids expecially)
+          How many people are you coming with ( kids especially)? Others are
+          encouraged to log in on their own
         </FormDescription>
         <FormField
           control={form.control}
