@@ -11,8 +11,8 @@ import { SidebarRoutes } from "./sidebar-routes";
 export const MobileSidebar = () => {
   return (
     <Sheet>
-      <SheetTrigger className="md:hidden pr-4 hover:opacity-75 transition">
-        <Menu />
+      <SheetTrigger className=" text-white md:hidden pr-4 hover:opacity-75 transition">
+        <Menu style={{ color: "white" }} />
       </SheetTrigger>
       <SheetContent
         side="left"
