@@ -20,7 +20,7 @@ export default function HomePageLayout({
           >
             Freda & Papa Yaw
           </h1>
-          <p className="text-lg font-bold text-white">April 20th 2023</p>
+          <p className="text-lg font-bold text-white">April 20th 2024</p>
         </div>
         <div className="flex item w-full ">
           <div>

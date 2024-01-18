@@ -32,7 +32,7 @@ export default async function SchedulePage() {
           Jordan River Temple
         </h2>
         <p>S Temple Dr, South Jordan, UT</p>
-        <p>Saturday April 20th, 2023</p>
+        <p>Saturday April 20th, 2024</p>
         <p>12:00PM</p>
         <p className="absolute bottom-2 right-2 italic underline">
           Click card for directions
@@ -49,7 +49,7 @@ export default async function SchedulePage() {
           Westbrook Stake Center
         </h2>
         <p>4113 W 6200 S, West Jordan, UT 84084</p>
-        <p>Saturday April 20th, 2023</p>
+        <p>Saturday April 20th, 2024</p>
         <p>5:00PM</p>
         <p className="absolute bottom-2 right-2 italic underline">
           Click card for directions
