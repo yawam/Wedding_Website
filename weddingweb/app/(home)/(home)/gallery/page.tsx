@@ -23,7 +23,7 @@ export default function GalleryPage() {
     { href: "/website_gallery-pics/4006.jpeg" },
     { href: "/website_gallery-pics/4008.jpeg" },
     { href: "/website_gallery-pics/5776.jpeg" },
-    { href: "/website_gallery-pics/7389.jpeg" },
+    // { href: "/website_gallery-pics/7389.jpeg" },
     { href: "/website_gallery-pics/17331.jpeg" },
     { href: "/website_gallery-pics/17428.jpeg" },
     { href: "/website_gallery-pics/17976.jpeg" },
@@ -43,6 +43,18 @@ export default function GalleryPage() {
     { href: "/website_gallery-pics/IMG_5730.jpg" },
     { href: "/website_gallery-pics/IMG_5799.jpg" },
     { href: "/website_gallery-pics/IMG_6896.jpg" },
+    { href: "/photoshoot/home.JPG" },
+    { href: "/photoshoot/IMG_6811.JPG" },
+    { href: "/photoshoot/IMG_6814.JPG" },
+    { href: "/photoshoot/IMG_6823.JPG" },
+    { href: "/photoshoot/IMG_6827.JPG" },
+    { href: "/photoshoot/IMG_6849.JPG" },
+    { href: "/photoshoot/IMG_6852.JPG" },
+    { href: "/photoshoot/ring.JPG" },
+    { href: "/photoshoot/sign-in-page.JPG" },
+    { href: "/photoshoot/StandingTogether1.JPG" },
+    { href: "/photoshoot/standingTogether2.JPG" },
+    { href: "/photoshoot/standingTogether3.JPG" },
   ];
 
   return (
