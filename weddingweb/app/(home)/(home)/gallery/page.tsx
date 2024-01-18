@@ -44,7 +44,6 @@ export default function GalleryPage() {
     { href: "/website_gallery-pics/IMG_5799.jpg" },
     { href: "/website_gallery-pics/IMG_6896.jpg" },
     { href: "/photoshoot/home.JPG" },
-    { href: "/photoshoot/IMG_6811.JPG" },
     { href: "/photoshoot/IMG_6814.JPG" },
     { href: "/photoshoot/IMG_6823.JPG" },
     { href: "/photoshoot/IMG_6827.JPG" },
