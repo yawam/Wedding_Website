@@ -11,10 +11,10 @@ export default function DonationsPage() {
         target="_blank"
         rel="noopener noreferrer"
         href="https://www.amazon.com/wedding/registry/364RGBEJJ19QW"
-        className="flex flex-col justify-center items-center p-2 bg-black bg-opacity-25 rounded-lg shadow-2xl transition duration-150 ease-in-out hover:scale-105"
+        className="flex flex-col justify-center items-center p-2 bg-black bg-opacity-50 rounded-lg shadow-2xl transition duration-150 ease-in-out hover:scale-105"
       >
         <h2
-          className={`text-white text-lg italic ${playfairDisplay.className} `}
+          className={`text-white text-xl italic ${playfairDisplay.className} `}
         >
           Checkout our amazon registry.
         </h2>
@@ -30,10 +30,17 @@ export default function DonationsPage() {
         target="_blank"
         rel="noopener noreferrer"
         href="https://venmo.com/u/PAPA_YAW"
-        className=" flex flex-col justify-center items-center p-2 bg-black bg-opacity-50 rounded-lg shadow-2xl transition duration-150 ease-in-out hover:scale-105"
+        className=" group flex flex-col justify-center items-center p-2 bg-black bg-opacity-50 rounded-lg shadow-2xl transition duration-150 ease-in-out hover:scale-105"
       >
+        <Image
+          className=" group-hover:transition duration-150 ease-in-out hover:scale-105 "
+          alt="venmo"
+          src="https://www.vectorlogo.zone/logos/venmo/venmo-icon.svg"
+          width={50}
+          height={50}
+        />
         <h2
-          className={`h-[100%] text-white text-lg italic ${playfairDisplay.className} `}
+          className={`h-[100%] text-white text-xl italic ${playfairDisplay.className} `}
         >
           Click here if you wish to make a monetary gift.
         </h2>

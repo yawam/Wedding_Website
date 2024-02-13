@@ -27,30 +27,28 @@ export default async function SchedulePage() {
         rel="noopener noreferrer"
         className=" relative m-auto w-[375px] h-[225px] md:w-[475px] md:h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center bg-black bg-opacity-50 text-white transition duration-150 ease-in-out hover:scale-105"
       >
-        <h1 className="text-2xl">Wedding</h1>
+        <h1 className="text-2xl">Temple Wedding</h1>
         <h2 className={`text-xl ${robotoSerif.className}`}>
           Jordan River Temple
         </h2>
         <p>S Temple Dr, South Jordan, UT</p>
         <p>Saturday April 20th, 2024</p>
-        <p>12:00PM</p>
+        <p>12:00 PM</p>
         <p className="absolute bottom-2 right-2 italic underline">
           Click card for directions
         </p>
       </Link>
       <Link
-        href="https://www.google.com/maps/place/The+Church+of+Jesus+Christ+of+Latter-day+Saints/@40.6376732,-111.9893845,16.69z/data=!4m15!1m8!3m7!1s0x87528e9b30ae0c83:0xf560e4d5c0419405!2s4029+Scarsborough+Ln,+West+Jordan,+UT+84084!3b1!8m2!3d40.6308203!4d-111.9873438!16s%2Fg%2F11c1c41mkf!3m5!1s0x87528c281335f151:0x4a7e4afe87e8a816!8m2!3d40.6381832!4d-111.9891838!16s%2Fg%2F1v_nc_45?entry=ttu"
+        href="https://www.google.com/maps/place/1409+W+Shields+Ln,+South+Jordan,+UT+84095/@40.5731103,-111.9320216,17z/data=!4m5!3m4!1s0x875288a0509f91db:0x97b0fd934f41ef81!8m2!3d40.5731103!4d-111.9320216"
         target="_blank"
         rel="noopener noreferrer"
         className=" relative  m-auto w-[375px] h-[225px] md:w-[475px] md:h-[225px] p-4 shadow-2xl rounded-md flex flex-col items-center justify-center bg-black bg-opacity-50 text-white transition duration-150 ease-in-out hover:scale-105"
       >
         <h1 className="text-2xl">Reception</h1>
-        <h2 className={`text-xl ${robotoSerif.className}`}>
-          Westbrook Stake Center
-        </h2>
-        <p>4113 W 6200 S, West Jordan, UT 84084</p>
+        <h2 className={`text-xl ${robotoSerif.className}`}>River Ridge Ward</h2>
+        <p>1409 W Shields Ln, South Jordan, UT 84095</p>
         <p>Saturday April 20th, 2024</p>
-        <p>5:00PM</p>
+        <p>3:30 PM</p>
         <p className="absolute bottom-2 right-2 italic underline">
           Click card for directions
         </p>
